@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Курси валют</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo-block">
+        <div class="logo-icon">📈</div>
+        <div>
+          <h1>Курси валют</h1>
+          <p class="subtitle">Актуальні курси банків України</p>
+        </div>
+      </div>
+      <button id="refreshBtn" class="btn-primary">
+        ⟳ Оновити
+      </button>
+    </div>
+  </header>
+
+  <main class="container main-layout">
+    <div class="update-row">
+      <div class="update-pill">
+        <span>⏱ Оновлено:&nbsp;</span>
+        <span id="lastUpdate">—</span>
+      </div>
+    </div>
+
+    <div class="cny-calculator">
+      <h2>Калькулятор юанів</h2>
+      <div class="cny-steps-row">
+        <div class="cny-step">
+          <div class="cny-label">Сума в юанях (CNY)</div>
+          <input id="cnyAmount" type="number" min="0" placeholder="1000" />
+        </div>
+        <div class="cny-arrow">→</div>
+        <div class="cny-step">
+          <div class="cny-label">+3% (комісія)</div>
+          <div id="cnyWithFee" class="cny-value">0.00 CNY</div>
+        </div>
+        <div class="cny-arrow">→</div>
+        <div class="cny-step">
+          <div class="cny-label">Сума в доларах</div>
+          <div id="cnyInUsd" class="cny-value">0.00 USD</div>
+        </div>
+        <div class="cny-arrow">→</div>
+        <div class="cny-step">
+          <div class="cny-label">Сума в гривнях</div>
+          <div id="cnyInUah" class="cny-value">0.00 UAH</div>
+        </div>
+      </div>
+      <p class="cny-note">
+        Розрахунок: (юані + 3%) → конвертація в долари за поточним курсом → конвертація в гривні.
+      </p>
+    </div>
+
+    <div class="grid">
+      <section id="cardsContainer" class="cards"></section>
+
+      <aside class="converter">
+        <h2>Конвертер валют</h2>
+        <div class="converter-block">
+          <label>Сума</label>
+          <input id="amountInput" type="number" value="100" />
+          <select id="fromCurrency"></select>
+        </div>
+
+        <button id="swapBtn" class="btn-circle">⇅</button>
+
+        <div class="converter-block">
+          <label>Результат</label>
+          <div id="resultBox" class="result-box">0.00</div>
+          <select id="toCurrency"></select>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Інформація про курси валют надається виключно в ознайомчих цілях.</p>
+      <p class="footer-small">Актуальні курси можуть відрізнятися в різних банках та обмінниках.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
